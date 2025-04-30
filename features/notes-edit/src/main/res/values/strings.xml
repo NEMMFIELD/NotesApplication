@@ -1,0 +1,7 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edit_note">Edit note</string>
+    <string name="edit_author">Edit author</string>
+    <string name="btn_edit_send">Send</string>
+</resources>

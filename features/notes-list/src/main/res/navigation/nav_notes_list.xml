@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_notes_list"
+    app:startDestination="@id/notesEditFragment">
+
+    <fragment
+        android:id="@+id/notesEditFragment"
+        android:name="com.example.notes.edit.ui.EditNotesFragment"
+        android:label="NotesEditFragment">
+        <argument
+            android:name="itemId"
+            android:defaultValue="0"
+            app:argType="string" />
+        <deepLink app:uri="android-app://com.example.notes.edit/{itemId}" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.example.notes.list.ui.NotesFragment"
+        android:label="fragment_notes"
+        tools:layout="@layout/fragment_notes">
+        <deepLink app:uri="android-app://com.example.notes.list.ui" />
+    </fragment>
+</navigation>
