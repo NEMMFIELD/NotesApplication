@@ -1,6 +1,5 @@
 package com.example.notes.list.domain
 
-import com.example.database.NoteEntity
 import com.example.notes.list.data.Mapper
 import javax.inject.Inject
 

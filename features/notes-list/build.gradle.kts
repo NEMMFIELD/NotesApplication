@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSetTree.Companion.test
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
@@ -38,6 +40,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -45,7 +48,16 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    testImplementation (libs.mockk)
     testImplementation(libs.junit)
+    testImplementation(libs.androidx.core.testing)
+    testImplementation(libs.robolectric)
+    testImplementation(kotlin("test"))
+    testImplementation (libs.turbine)
+    testImplementation (libs.kotlinx.coroutines.test)
+    testImplementation(libs.junit.jupiter)
+
+
     implementation(libs.fragment.kotlin)
     implementation(libs.recyclerview)
     implementation(libs.navigation.fragment)
@@ -65,3 +77,4 @@ dependencies {
     implementation(project(":core:utils"))
     implementation(project(":features:notes-edit"))
 }
+
