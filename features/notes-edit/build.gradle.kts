@@ -46,7 +46,14 @@ dependencies {
     implementation(libs.material)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+    testImplementation (libs.mockk)
     testImplementation(libs.junit)
+    testImplementation(libs.androidx.core.testing)
+    testImplementation(libs.robolectric)
+    testImplementation(kotlin("test"))
+    testImplementation (libs.turbine)
+    testImplementation (libs.kotlinx.coroutines.test)
+    testImplementation(libs.junit.jupiter)
     // Dagger Hilt and KSP dependencies
     // Dagger Hilt
     implementation(libs.dagger.hilt.android)

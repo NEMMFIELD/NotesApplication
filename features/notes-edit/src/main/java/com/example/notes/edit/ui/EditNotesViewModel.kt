@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.notes.edit.domain.EditNotesUseCase
 import com.example.utils.Logger
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.delay
@@ -16,12 +17,13 @@ import javax.inject.Inject
 @HiltViewModel
 class EditNotesViewModel @Inject constructor(
     private val editNotesUseCase: EditNotesUseCase,
-    private val androidLogger: Logger
+    private val androidLogger: Logger,
+    private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ViewModel() {
     private val _editFinished = MutableLiveData<Boolean>()
     val editFinished: LiveData<Boolean> get() = _editFinished
     fun editNote() {
-        viewModelScope.launch(Dispatchers.IO + SupervisorJob()) {
+        viewModelScope.launch(dispatcher + SupervisorJob()) {
             try {
                 editNotesUseCase.execute()
                 delay(2000)
